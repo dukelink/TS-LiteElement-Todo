@@ -1,0 +1,26 @@
+{
+  "name": "ts-lit-proj-1",
+  "version": "1.0.0",
+  "description": "TS LitElement Example 1",
+  "browser": "",
+  "scripts": {
+    "start": "echo \"Error: no start specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lit-element",
+    "lit-html",
+    "lit",
+    "example",
+    "webcomponents",
+    "customelements"
+  ],
+  "author": "Duke",
+  "dependencies": {
+    "@polymer/lit-element": "^0.6.5",
+    "@webcomponents/webcomponentsjs": "^2.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.2"
+  }
+}
