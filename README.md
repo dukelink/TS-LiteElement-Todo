@@ -1,0 +1,3 @@
+# TS-LiteElement-Todo
+
+1/1/2019 See if we can get this to work with older browsers and IE 11.  The problem may be with ES2015 code instead of web components...
