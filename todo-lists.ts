@@ -16,7 +16,6 @@ export * from './lib/decorators.js';
 export { html, svg } from '../../lit-html/lit-html.js';
 export class LitElement extends UpdatingElement {
 */
-
 import {LitElement, html, property, customElement} from './node_modules/@polymer/lit-element/lit-element.js'
 
 @customElement('todo-item') default class extends LitElement {
@@ -26,14 +25,26 @@ import {LitElement, html, property, customElement} from './node_modules/@polymer
   @property({type: Function}) remove
 
   render() {
-    return html`${this.todo} <button @click=${this.remove}>-</button>`
+    return html`
+    <style>
+      div { display: inline; }
+    </style>
+
+    <div>${this.todo}</div> <button @click=${this.remove}>-</button>
+    `
   }
 
 }
 
 @customElement('todo-list') default class extends LitElement {
 
-  @property() list = ['clean the house','buy milk']
+  @property() list = ['clean the house!','buy milk']
+
+  constructor() {
+    super();
+    for (let i=0; i<1000; i++)
+      this.list.push('Item #'+i);
+  }
 
   @property() todo = ''
 

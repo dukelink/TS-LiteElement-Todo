@@ -1,1 +1,0 @@
-import './simple-web-element.js';

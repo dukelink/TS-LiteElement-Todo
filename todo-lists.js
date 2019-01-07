@@ -1,3 +1,9 @@
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 /*
 To get things working, I needed to edit some paths in lit-element.js (node_modules)...
 
@@ -16,12 +22,6 @@ export * from './lib/decorators.js';
 export { html, svg } from '../../lit-html/lit-html.js';
 export class LitElement extends UpdatingElement {
 */
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
 import { LitElement, html, property, customElement } from './node_modules/@polymer/lit-element/lit-element.js';
 let default_1 = class default_1 extends LitElement {
     constructor() {
@@ -29,7 +29,13 @@ let default_1 = class default_1 extends LitElement {
         this.todo = '';
     }
     render() {
-        return html `${this.todo} <button @click=${this.remove}>-</button>`;
+        return html `
+    <style>
+      div { display: inline; }
+    </style>
+
+    <div>${this.todo}</div> <button @click=${this.remove}>-</button>
+    `;
     }
 };
 __decorate([
@@ -43,9 +49,11 @@ default_1 = __decorate([
 ], default_1);
 let default_2 = class default_2 extends LitElement {
     constructor() {
-        super(...arguments);
-        this.list = ['clean the house', 'buy milk'];
+        super();
+        this.list = ['clean the house!', 'buy milk'];
         this.todo = '';
+        for (let i = 0; i < 1000; i++)
+            this.list.push('Item #' + i);
     }
     newTodo() {
         this.list = [...this.list, this.todo];
