@@ -16,7 +16,7 @@ export * from './lib/decorators.js';
 export { html, svg } from '../../lit-html/lit-html.js';
 export class LitElement extends UpdatingElement {
 */
-import {LitElement, html, property, customElement} from './node_modules/@polymer/lit-element/lit-element.js'
+import {LitElement, html, property, customElement} from '../node_modules/@polymer/lit-element/lit-element.js'
 
 @customElement('todo-item') default class extends LitElement {
   

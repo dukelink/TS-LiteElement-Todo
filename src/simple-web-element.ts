@@ -17,7 +17,7 @@ export { html, svg } from '../../lit-html/lit-html.js';
 export class LitElement extends UpdatingElement {
 */
 
-import {LitElement, html, property, customElement} from './node_modules/@polymer/lit-element/lit-element.js'
+import {LitElement, html, property, customElement} from '../node_modules/@polymer/lit-element/lit-element.js'
 
 @customElement('simple-custom-element') default class extends LitElement {
   render() {
